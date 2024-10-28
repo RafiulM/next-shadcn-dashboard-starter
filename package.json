@@ -11,7 +11,7 @@
     "build": "next build",
     "start": "next start",
     "lint": "next lint",
-    "format": "prettier . --write",
+    "format": "pretty-quick --staged",
     "prepare": "husky"
   },
   "lint-staged": {
@@ -46,6 +46,8 @@
     "@radix-ui/react-tabs": "^1.0.4",
     "@radix-ui/react-toast": "^1.1.5",
     "@radix-ui/react-tooltip": "^1.0.7",
+    "@supabase/ssr": "^0.5.1",
+    "@supabase/supabase-js": "^2.45.5",
     "@tanstack/react-table": "^8.10.7",
     "@types/node": "20.5.7",
     "@types/react": "18.2.21",
@@ -61,7 +63,6 @@
     "lucide-react": "^0.447.0",
     "match-sorter": "^6.3.4",
     "next": "^14.2.3",
-    "next-auth": "^5.0.0-beta.18",
     "next-themes": "^0.2.1",
     "nextjs-toploader": "^1.6.12",
     "nuqs": "^1.19.1",
@@ -73,6 +74,7 @@
     "react-hook-form": "^7.47.0",
     "react-responsive": "^10.0.0",
     "recharts": "^2.12.7",
+    "server-only": "^0.0.1",
     "sharp": "^0.32.5",
     "sonner": "^1.5.0",
     "sort-by": "^1.2.0",
@@ -94,7 +96,9 @@
     "@typescript-eslint/eslint-plugin": "^6.11.0",
     "husky": "^9.0.11",
     "lint-staged": "^15.2.7",
-    "prettier": "3.0.3",
-    "prettier-plugin-tailwindcss": "^0.5.14"
+    "prettier": "^3.0.3",
+    "prettier-plugin-organize-imports": "^4.1.0",
+    "prettier-plugin-tailwindcss": "^0.5.14",
+    "pretty-quick": "^4.0.0"
   }
 }
