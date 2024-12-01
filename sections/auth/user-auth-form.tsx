@@ -1,44 +1,26 @@
-'use client';
-import { Button } from '@/components/ui/button';
-import {
-  Form,
-  FormControl,
-  FormField,
-  FormItem,
-  FormLabel,
-  FormMessage
-} from '@/components/ui/form';
-import { Input } from '@/components/ui/input';
-import { zodResolver } from '@hookform/resolvers/zod';
-import { useSearchParams } from 'next/navigation';
-import { useTransition } from 'react';
-import { useForm } from 'react-hook-form';
-import * as z from 'zod';
-import GithubSignInButton from './github-auth-button';
+'use client'
+import { Button } from '@/components/ui/button'
+import { Form } from '@/components/ui/form'
+import { Loader2 } from 'lucide-react'
+import { useSearchParams } from 'next/navigation'
+import React from 'react'
+import { FieldValues, UseFormReturn } from 'react-hook-form'
 
-const formSchema = z.object({
-  email: z.string().email({ message: 'Enter a valid email address' })
-});
+type UserAuthFormProps<T extends FieldValues> = {
+  onSubmit: (data: T) => void
+  isLoading?: boolean
+  form: UseFormReturn<T, any, undefined>
+  children?: React.ReactNode
+}
 
-type UserFormValue = z.infer<typeof formSchema>;
-
-export default function UserAuthForm() {
-  const searchParams = useSearchParams();
-  const callbackUrl = searchParams.get('callbackUrl');
-  const [loading, startTransition] = useTransition();
-  const defaultValues = {
-    email: 'demo@gmail.com'
-  };
-  const form = useForm<UserFormValue>({
-    resolver: zodResolver(formSchema),
-    defaultValues
-  });
-
-  const onSubmit = async (data: UserFormValue) => {
-    startTransition(() => {
-      //  sign in here
-    });
-  };
+export default function UserAuthForm<T extends FieldValues>({
+  onSubmit,
+  isLoading,
+  form,
+  children
+}: UserAuthFormProps<T>) {
+  const searchParams = useSearchParams()
+  const callbackUrl = searchParams.get('callbackUrl')
 
   return (
     <>
@@ -47,31 +29,14 @@ export default function UserAuthForm() {
           onSubmit={form.handleSubmit(onSubmit)}
           className="w-full space-y-2"
         >
-          <FormField
-            control={form.control}
-            name="email"
-            render={({ field }) => (
-              <FormItem>
-                <FormLabel>Email</FormLabel>
-                <FormControl>
-                  <Input
-                    type="email"
-                    placeholder="Enter your email..."
-                    disabled={loading}
-                    {...field}
-                  />
-                </FormControl>
-                <FormMessage />
-              </FormItem>
-            )}
-          />
-
-          <Button disabled={loading} className="ml-auto w-full" type="submit">
-            Continue With Email
+          {children}
+          <Button disabled={isLoading} className="ml-auto w-full" type="submit">
+            {isLoading && <Loader2 className="h-4 w-4 animate-spin" />}
+            Continue
           </Button>
         </form>
       </Form>
-      <div className="relative">
+      {/* <div className="relative">
         <div className="absolute inset-0 flex items-center">
           <span className="w-full border-t" />
         </div>
@@ -81,7 +46,7 @@ export default function UserAuthForm() {
           </span>
         </div>
       </div>
-      <GithubSignInButton />
+      <GithubSignInButton /> */}
     </>
-  );
+  )
 }

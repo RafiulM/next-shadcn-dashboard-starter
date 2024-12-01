@@ -1,24 +1,27 @@
 'use client'
 
 import { buttonVariants } from '@/components/ui/button'
-import { useSignIn } from '@/hooks/auth'
+import { useSignUp } from '@/hooks/auth'
 import { cn } from '@/lib/utils'
 import Link from 'next/link'
-import { useRouter } from 'next/navigation'
 import toast from 'react-hot-toast'
-import { SignInForm, SignInFormValue, useSignInForm } from '../auth-form'
+import { SignUpForm, SignUpFormValue, useSignUpForm } from '../auth-form'
 import UserAuthForm from '../user-auth-form'
 
-export default function SignInViewPage() {
-  const router = useRouter()
-  const signIn = useSignIn()
-  const form = useSignInForm()
-  async function handleSubmit(data: SignInFormValue) {
-    await signIn.mutateAsync(data, {
-      onError: () => toast.error('Error signing in'),
-      onSuccess: () => router.push('/dashboard')
+export default function SignUpViewPage() {
+  const signUp = useSignUp()
+  const signUpForm = useSignUpForm()
+
+  async function handleSubmit(data: SignUpFormValue) {
+    const toastId = toast.loading('Creating account..')
+
+    await signUp.mutateAsync(data, {
+      onError: () => toast.error('Error creating account', { id: toastId }),
+      onSuccess: () =>
+        toast.success('Confirmation link sent to your email', { id: toastId })
     })
   }
+
   return (
     <div className="relative h-screen flex-col items-center justify-center md:grid lg:max-w-none lg:grid-cols-2 lg:px-0">
       <Link
@@ -61,17 +64,19 @@ export default function SignInViewPage() {
       <div className="flex h-full items-center p-4 lg:p-8">
         <div className="mx-auto flex w-full flex-col justify-center space-y-6 sm:w-[350px]">
           <div className="flex flex-col space-y-2 text-center">
-            <h1 className="text-2xl font-semibold tracking-tight">Sign in</h1>
+            <h1 className="text-2xl font-semibold tracking-tight">
+              Create Account
+            </h1>
             <p className="text-sm text-muted-foreground">
-              Please enter your credentials to continue.
+              Please fill in the details below to create your account.
             </p>
           </div>
           <UserAuthForm
-            form={form}
+            form={signUpForm}
             onSubmit={handleSubmit}
-            isLoading={signIn.isPending}
+            isLoading={signUp.isPending}
           >
-            <SignInForm />
+            <SignUpForm />
           </UserAuthForm>
           <p className="px-8 text-center text-sm text-muted-foreground">
             By clicking continue, you agree to our{' '}
