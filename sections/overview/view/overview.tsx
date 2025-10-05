@@ -13,6 +13,7 @@ import {
   CardTitle
 } from '@/components/ui/card';
 import { Tabs, TabsContent, TabsList, TabsTrigger } from '@/components/ui/tabs';
+import { AIChat } from '@/components/chat/ai-chat';
 
 export default function OverViewPage() {
   return (
@@ -158,6 +159,9 @@ export default function OverViewPage() {
               </div>
               <div className="col-span-4 md:col-span-3">
                 <PieGraph />
+              </div>
+              <div className="col-span-4 lg:col-span-3">
+                <AIChat />
               </div>
             </div>
           </TabsContent>
