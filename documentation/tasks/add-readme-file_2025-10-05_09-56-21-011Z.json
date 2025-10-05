@@ -1,0 +1,18 @@
+[
+  {
+    "title": "Draft Comprehensive README.md",
+    "description": "Create a detailed README.md file at the root of the repository to serve as the primary documentation for the Next Shadcn Dashboard Starter project.",
+    "details": "- Create a new file named README.md in the project root.\n- Include the following sections:\n  1. Project Title and Description: Clearly state the project name and a concise summary of its purpose.\n  2. Features: List the key features (e.g., authentication, theming, data tables, charts, tRPC API, Prisma ORM, etc.).\n  3. Technology Stack: Enumerate the main technologies and libraries used (Next.js, React, TypeScript, Tailwind CSS, shadcn/ui, etc.).\n  4. Getting Started: Step-by-step instructions for cloning the repo, installing dependencies, setting up environment variables, and running the development server.\n  5. Project Structure Overview: Briefly describe the main folders and their purposes (e.g., app, components, etc.).\n  6. Deployment: Instructions for deploying to Vercel, including any required environment variables.\n  7. Contribution Guidelines: (Optional) Brief note on how to contribute or where to find more info.\n- Use Markdown best practices: clear headings, bullet points, code blocks for commands, and badges if available.\n- Ensure all instructions are up to date and reflect the current project structure and dependencies.",
+    "status": "pending",
+    "test_strategy": "Manually verify that the README.md file is present at the root, is well-formatted, and contains all required sections. Follow the setup instructions on a clean environment to ensure they work as described. Review for clarity, accuracy, and completeness.",
+    "priority": "high",
+    "ordinal": 0,
+    "task_group_id": "0c73ace5-0195-4d79-a77c-9322ce84110f",
+    "parent_task_id": null,
+    "ai_result": null,
+    "id": "82145e84-3a34-4c7e-a438-5bf1bec5773a",
+    "created_at": "2025-10-05T09:56:07.561174Z",
+    "user_id": "user_2yhesfpa5IDelC7UxShblIKQJIb",
+    "subtasks": []
+  }
+]
