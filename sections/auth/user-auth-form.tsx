@@ -9,7 +9,7 @@ import { FieldValues, UseFormReturn } from 'react-hook-form'
 type UserAuthFormProps<T extends FieldValues> = {
   onSubmit: (data: T) => void
   isLoading?: boolean
-  form: UseFormReturn<T, any, undefined>
+  form: UseFormReturn<T>
   children?: React.ReactNode
 }
 
