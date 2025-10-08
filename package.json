@@ -12,7 +12,7 @@
     "start": "next start",
     "lint": "next lint",
     "format": "pretty-quick --staged",
-    "prepare": "husky"
+    "prepare": "husky install"
   },
   "lint-staged": {
     "**/*": [

@@ -17,13 +17,22 @@
   [![Supabase](https://img.shields.io/badge/Supabase-Auth-3ECF8E?logo=supabase&logoColor=white)](https://supabase.com/)
   [![Vercel](https://img.shields.io/badge/Deploy-Vercel-000000?logo=vercel&logoColor=white)](https://vercel.com/)
   
-  [![GitHub Issues](https://img.shields.io/github/issues/RafiulM/next-shadcn-dashboard-starter?logo=github)](https://github.com/RafiulM/next-shadcn-dashboard-starter/issues)
-  [![GitHub Stars](https://img.shields.io/github/stars/RafiulM/next-shadcn-dashboard-starter?logo=github)](https://github.com/RafiulM/next-shadcn-dashboard-starter/stargazers)
-  [![GitHub Forks](https://img.shields.io/github/forks/RafiulM/next-shadcn-dashboard-starter?logo=github)](https://github.com/RafiulM/next-shadcn-dashboard-starter/network/members)
+  [![GitHub Issues](https://img.shields.io/github/issues/RafiulM/next-shadcn-dashboard-starter?logo=github&color=red)](https://github.com/RafiulM/next-shadcn-dashboard-starter/issues)
+  [![GitHub Stars](https://img.shields.io/github/stars/RafiulM/next-shadcn-dashboard-starter?logo=github&color=yellow)](https://github.com/RafiulM/next-shadcn-dashboard-starter/stargazers)
+  [![GitHub Forks](https://img.shields.io/github/forks/RafiulM/next-shadcn-dashboard-starter?logo=github&color=blue)](https://github.com/RafiulM/next-shadcn-dashboard-starter/network/members)
+  [![Contributors](https://img.shields.io/github/contributors/RafiulM/next-shadcn-dashboard-starter?logo=github&color=green)](https://github.com/RafiulM/next-shadcn-dashboard-starter/graphs/contributors)
+  [![Last Commit](https://img.shields.io/github/last-commit/RafiulM/next-shadcn-dashboard-starter?logo=git&color=orange)](https://github.com/RafiulM/next-shadcn-dashboard-starter/commits/main)
+  [![Size](https://img.shields.io/github/repo-size/RafiulM/next-shadcn-dashboard-starter?logo=github&color=purple)](https://github.com/RafiulM/next-shadcn-dashboard-starter)
   
   <br />
   
   **[Live Demo](https://next-shadcn-dashboard-starter.vercel.app)** • **[Report Bug](https://github.com/RafiulM/next-shadcn-dashboard-starter/issues)** • **[Request Feature](https://github.com/RafiulM/next-shadcn-dashboard-starter/issues)**
+  
+  <br />
+  
+  ## 🚀 Quick Deploy
+  
+  [![Deploy with Vercel](https://vercel.com/button)](https://vercel.com/new/clone?repository-url=https://github.com/RafiulM/next-shadcn-dashboard-starter)
 </div>
 
 ## ✨ Features
@@ -94,10 +103,12 @@
 ### Prerequisites
 
 Before you begin, ensure you have the following installed on your system:
-- **Node.js** 18.17 or later
+- **Node.js** 18.17 or later (Node.js 20+ recommended for optimal Supabase compatibility)
 - **npm** or **yarn** or **pnpm** package manager
 - **Git** for version control
 - **Supabase account** (free) for authentication - [Sign up here](https://supabase.com)
+
+> ⚠️ **Node.js Version**: While Node.js 18.17+ is supported, Node.js 20+ is recommended for the best Supabase compatibility and future-proofing.
 
 ### Quick Start
 
@@ -412,6 +423,14 @@ npm install --force
 yarn install && yarn build
 # or
 pnpm install && pnpm build
+```
+
+**Issue**: TypeScript/ESLint errors during build
+```bash
+# If you encounter ESLint configuration errors, the project has been fixed
+# with a simplified ESLint config. Try cleaning and rebuilding:
+rm -rf .next
+npm run build
 ```
 
 #### **Environment Variables**
