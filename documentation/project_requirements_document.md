@@ -9,22 +9,24 @@ This starter is built to solve two main problems: (1) eliminating the overhead o
 ## 2. In-Scope vs. Out-of-Scope
 
 **In-Scope (Version 1.0)**
-- Pre-configured authentication: sign-in, sign-up pages, session handling in `lib/auth.ts`, protected routes via `middleware.ts`.
-- Dashboard skeleton: collapsible sidebar, header, main content area.
-- Example modules: Employee Management, Product Management, Kanban Board, Settings, Profile Page.
-- UI components library: copied and customizable `shadcn/ui` components (tables, cards, forms, buttons, date-picker, skeletons).
-- Theming: light/dark toggle powered by `next-themes`.
-- Utility functions: Tailwind class merging (`clsx`, `tailwind-merge`), date handling (`date-fns`), Zod validation stubs.
-- Basic code quality: Prettier, ESLint/Husky pre-commit hooks.
+
+*   Pre-configured authentication: sign-in, sign-up pages, session handling in `lib/auth.ts`, protected routes via `middleware.ts`.
+*   Dashboard skeleton: collapsible sidebar, header, main content area.
+*   Example modules: Employee Management, Product Management, Kanban Board, Settings, Profile Page.
+*   UI components library: copied and customizable `shadcn/ui` components (tables, cards, forms, buttons, date-picker, skeletons).
+*   Theming: light/dark toggle powered by `next-themes`.
+*   Utility functions: Tailwind class merging (`clsx`, `tailwind-merge`), date handling (`date-fns`), Zod validation stubs.
+*   Basic code quality: Prettier, ESLint/Husky pre-commit hooks.
 
 **Out-of-Scope (Later Phases)**
-- Real backend API integration; placeholder data only.
-- Advanced state management (Zustand, Redux) beyond local state and props.
-- Automated testing (unit, integration, E2E).
-- Internationalization (i18n) and localization.
-- CI/CD pipelines and deployment scripts.
-- Storybook or component catalog.
-- Advanced analytics, logging, or monitoring.
+
+*   Real backend API integration; placeholder data only.
+*   Advanced state management (Zustand, Redux) beyond local state and props.
+*   Automated testing (unit, integration, E2E).
+*   Internationalization (i18n) and localization.
+*   CI/CD pipelines and deployment scripts.
+*   Storybook or component catalog.
+*   Advanced analytics, logging, or monitoring.
 
 ## 3. User Flow
 
@@ -34,54 +36,54 @@ From the dashboard home, users can click sidebar links: “Employee,” “Produ
 
 ## 4. Core Features
 
-- **Authentication**: Sign-in/sign-up pages, session cookies, middleware-protected routes.
-- **Dashboard Layout**: Collapsible sidebar (`components/dashboard/sidebar.tsx`), header, responsive main view.
-- **Employee Management**: List and detail pages under `/dashboard/employee`.
-- **Product Management**: List and detail pages under `/dashboard/product`.
-- **Kanban Board**: Interactive board component under `/dashboard/kanban`.
-- **Settings Module**: Placeholder settings page hierarchy.
-- **Profile Page**: User info and profile update stubs.
-- **UI Library**: Fully customizable components from `components/ui/` (buttons, cards, tables, modals, form fields, skeletons).
-- **Theming**: Dark/light mode toggle via `next-themes` and `components/mode-toggle.tsx`.
-- **Utility Helpers**: `lib/utils.ts` (class names merging), `lib/auth.ts` (session logic), `lib/validations.ts` (Zod schemas).
-- **Build Tools**: Tailwind CSS, PostCSS, TypeScript, Husky, Prettier.
+*   **Authentication**: Sign-in/sign-up pages, session cookies, middleware-protected routes.
+*   **Dashboard Layout**: Collapsible sidebar (`components/dashboard/sidebar.tsx`), header, responsive main view.
+*   **Employee Management**: List and detail pages under `/dashboard/employee`.
+*   **Product Management**: List and detail pages under `/dashboard/product`.
+*   **Kanban Board**: Interactive board component under `/dashboard/kanban`.
+*   **Settings Module**: Placeholder settings page hierarchy.
+*   **Profile Page**: User info and profile update stubs.
+*   **UI Library**: Fully customizable components from `components/ui/` (buttons, cards, tables, modals, form fields, skeletons).
+*   **Theming**: Dark/light mode toggle via `next-themes` and `components/mode-toggle.tsx`.
+*   **Utility Helpers**: `lib/utils.ts` (class names merging), `lib/auth.ts` (session logic), `lib/validations.ts` (Zod schemas).
+*   **Build Tools**: Tailwind CSS, PostCSS, TypeScript, Husky, Prettier.
 
 ## 5. Tech Stack & Tools
 
-- **Next.js (App Router)**: Framework for SSR, SSG, routing, and API routes.
-- **React & TypeScript**: Strong typing and component model.
-- **Tailwind CSS**: Utility-first styling.
-- **shadcn/ui**: Accessible, copy-able UI components based on Radix UI.
-- **next-themes**: Theme switching.
-- **date-fns**: Date manipulation.
-- **clsx & tailwind-merge**: Conditional class merging.
-- **Zod**: Schema validation (in `lib/validations.ts`).
-- **Husky & Prettier**: Pre-commit hooks and formatting.
-- **IDE Integrations**: Recommended VS Code with TypeScript, ESLint, Tailwind CSS IntelliSense.
+*   **Next.js (App Router)**: Framework for SSR, SSG, routing, and API routes.
+*   **React & TypeScript**: Strong typing and component model.
+*   **Tailwind CSS**: Utility-first styling.
+*   **shadcn/ui**: Accessible, copy-able UI components based on Radix UI.
+*   **next-themes**: Theme switching.
+*   **date-fns**: Date manipulation.
+*   **clsx & tailwind-merge**: Conditional class merging.
+*   **Zod**: Schema validation (in `lib/validations.ts`).
+*   **Husky & Prettier**: Pre-commit hooks and formatting.
+*   **IDE Integrations**: Recommended VS Code with TypeScript, ESLint, Tailwind CSS IntelliSense.
 
 ## 6. Non-Functional Requirements
 
-- **Performance**: First contentful paint (FCP) under 1s on 3G; hydrate within 500ms.
-- **Accessibility**: WCAG 2.1 AA standards; semantic HTML, ARIA roles in custom components.
-- **Security**: Protected routes via middleware; secure session cookies (httpOnly, sameSite).
-- **Usability**: Responsive design down to 320px width; consistent spacing and typography.
-- **Maintainability**: Modular folder structure; reusable components; strict TypeScript rules.
+*   **Performance**: First contentful paint (FCP) under 1s on 3G; hydrate within 500ms.
+*   **Accessibility**: WCAG 2.1 AA standards; semantic HTML, ARIA roles in custom components.
+*   **Security**: Protected routes via middleware; secure session cookies (httpOnly, sameSite).
+*   **Usability**: Responsive design down to 320px width; consistent spacing and typography.
+*   **Maintainability**: Modular folder structure; reusable components; strict TypeScript rules.
 
 ## 7. Constraints & Assumptions
 
-- **Node.js v16+** and NPM/Yarn available.
-- **No real API backend**; developers will integrate their own endpoints later.
-- **`next-themes`** works client-side only; initial theme flash acceptable.
-- **Assume Zod schemas** will be expanded per project needs.
-- **Hosting**: Vercel or any Node-capable environment.
-- **Scoped CSS**: Tailwind only; no CSS Modules or styled-components.
+*   **Node.js v16+** and NPM/Yarn available.
+*   **No real API backend**; developers will integrate their own endpoints later.
+*   `next-themes` works client-side only; initial theme flash acceptable.
+*   **Assume Zod schemas** will be expanded per project needs.
+*   **Hosting**: Vercel or any Node-capable environment.
+*   **Scoped CSS**: Tailwind only; no CSS Modules or styled-components.
 
 ## 8. Known Issues & Potential Pitfalls
 
-- **Flicker on theme load**: default theme toggling can cause a flash of unstyled content—mitigate with CSS `class` strategy or SSR theme injection.
-- **Route Protection Gaps**: Ensure `middleware.ts` covers all `/dashboard/*` and `/profile` paths.
-- **Data-Fetching Ambiguity**: Devs must choose between server components or client fetch (React Query/SWR) and consistently apply.
-- **Auth Integration**: Placeholder auth logic may need replacement with NextAuth or custom JWT flows.
-- **Large Bundle Size**: Copy-pasted `shadcn/ui` components can bloat bundle—tree-shake unused exports or lazy-load heavy widgets.
+*   **Flicker on theme load**: default theme toggling can cause a flash of unstyled content—mitigate with CSS `class` strategy or SSR theme injection.
+*   **Route Protection Gaps**: Ensure `middleware.ts` covers all `/dashboard/*` and `/profile` paths.
+*   **Data-Fetching Ambiguity**: Devs must choose between server components or client fetch (React Query/SWR) and consistently apply.
+*   **Auth Integration**: Placeholder auth logic may need replacement with NextAuth or custom JWT flows.
+*   **Large Bundle Size**: Copy-pasted `shadcn/ui` components can bloat bundle—tree-shake unused exports or lazy-load heavy widgets.
 
 By following this PRD, an AI or human developer has a clear, unambiguous blueprint to implement, extend, or customize the starter template into a production-ready dashboard application.
