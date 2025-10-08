@@ -25,6 +25,7 @@ This is a starter template using the following stack:
 - Auth - [Auth.js](https://authjs.dev/)
 - Tables - [Tanstack Tables](https://ui.shadcn.com/docs/components/data-table)
 - Forms - [React Hook Form](https://ui.shadcn.com/docs/components/form)
+- Testing - [Jest](https://jestjs.io/)
 - Linting - [ESLint](https://eslint.org)
 - Pre-commit Hooks - [Husky](https://typicode.github.io/husky/)
 - Formatting - [Prettier](https://prettier.io)
@@ -58,3 +59,19 @@ Follow these steps to clone the repository and start the development server:
 - `npm run dev`
 
 You should now be able to access the application at http://localhost:3000.
+
+## Testing
+
+This project uses Jest for unit testing. To run tests:
+
+- `npm test` - Run tests in watch mode
+- `npm run test:ci` - Run tests once (for CI environments)
+
+### Test Location
+
+Tests are located in `__tests__` directories alongside their respective components:
+- Example: `components/ui/__tests__/button.test.js`
+
+### Writing Tests
+
+When writing tests, place them in a `__tests__` directory next to the component you're testing. Use the `.test.js` or `.test.ts` extension for your test files.
