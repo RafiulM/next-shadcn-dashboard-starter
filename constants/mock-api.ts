@@ -4,7 +4,46 @@
 
 import { matchSorter } from 'match-sorter'; // For filtering
 import sortBy from 'sort-by'; // For sorting
-import { faker } from '@faker-js/faker';
+// Mock faker object to avoid dependency issues
+const faker = {
+  person: {
+    firstName: () => ['John', 'Jane', 'Mike', 'Sarah', 'David', 'Emma'][Math.floor(Math.random() * 6)],
+    lastName: () => ['Smith', 'Johnson', 'Williams', 'Brown', 'Jones', 'Garcia'][Math.floor(Math.random() * 6)]
+  },
+  internet: {
+    email: () => `user${Math.floor(Math.random() * 1000)}@example.com`
+  },
+  location: {
+    street: () => ['Main St', 'Oak Ave', 'Pine Rd', 'Elm Dr'][Math.floor(Math.random() * 4)],
+    zipCode: () => Math.floor(Math.random() * 90000 + 10000).toString(),
+    longitude: () => parseFloat((Math.random() * 360 - 180).toFixed(6)),
+    latitude: () => parseFloat((Math.random() * 180 - 90).toFixed(6))
+  },
+  helpers: {
+    arrayElement: (arr: any[]) => arr[Math.floor(Math.random() * arr.length)]
+  },
+  date: {
+    recent: () => ({
+      toISOString: () => new Date(Date.now() - Math.random() * 30 * 24 * 60 * 60 * 1000).toISOString()
+    }),
+    between: ({ from, to }: { from: string; to: string }) => ({
+      toISOString: () => {
+        const fromTime = new Date(from).getTime();
+        const toTime = new Date(to).getTime();
+        const randomTime = fromTime + Math.random() * (toTime - fromTime);
+        return new Date(randomTime).toISOString();
+      }
+    })
+  },
+  commerce: {
+    productName: () => ['Laptop', 'Phone', 'Tablet', 'Watch', 'Headphones'][Math.floor(Math.random() * 5)],
+    productDescription: () => ['High quality product', 'Best in class', 'Premium item', 'Great value'][Math.floor(Math.random() * 4)],
+    price: ({ min = 5, max = 500, dec = 2 }: { min?: number; max?: number; dec?: number }) => {
+      const price = Math.random() * (max - min) + min;
+      return price.toFixed(dec);
+    }
+  }
+};
 
 // Define the shape of User data
 
