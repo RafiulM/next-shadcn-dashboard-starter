@@ -1,5 +1,4 @@
-import { searchParamsCache } from '@/lib/searchparams';
-import { EmployeeListingPage } from '@/sections/employee/views';
+import { EmployeeListingPageClient } from '@/sections/employee/views/employee-listing-page-client';
 import { SearchParams } from 'nuqs/parsers';
 import React from 'react';
 
@@ -12,8 +11,5 @@ export const metadata = {
 };
 
 export default async function Page({ searchParams }: pageProps) {
-  // Allow nested RSCs to access the search params (in a type-safe way)
-  searchParamsCache.parse(searchParams);
-
-  return <EmployeeListingPage />;
+  return <EmployeeListingPageClient searchParams={searchParams} />;
 }
